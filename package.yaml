@@ -1,10 +1,10 @@
 name:                par-wordle
 version:             0.1.0.0
-github:              "sanjayrajasekharan/par-wordle"
+github:              "zjc2106/par-wordle"
 license:             BSD3
 author:              "Zachary Coeur and Sanjay Rajasekharan"
-maintainer:          "zjc2106@columbia.edu"
-copyright:           "2022 Zachary Coeur"
+maintainer:          "zjc2106@columbia.edu, sr3765@columbia.edu"
+copyright:           "2022 Zachary Coeur, Sanjay Rajasekharan"
 
 extra-source-files:
 - README.md
@@ -54,6 +54,7 @@ executables:
     dependencies:
     - par-wordle
     - parallel
+    - deepseq
 
   seq-wordle-exe:
     main:                Seq.hs
