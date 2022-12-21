@@ -1,0 +1,81 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           par-wordle
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/par-wordle#readme>
+homepage:       https://github.com/sanjayrajasekharan/par-wordle#readme
+bug-reports:    https://github.com/sanjayrajasekharan/par-wordle/issues
+author:         Zachary Coeur and Sanjay Rajasekharan
+maintainer:     zjc2106@columbia.edu
+copyright:      2022 Zachary Coeur
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    CHANGELOG.md
+
+source-repository head
+  type: git
+  location: https://github.com/sanjayrajasekharan/par-wordle
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_par_wordle
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -eventlog -O2
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , containers
+    , parallel
+  default-language: Haskell2010
+
+executable par-wordle-exe
+  main-is: Main.hs
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -eventlog -O2 -threaded -rtsopts -with-rtsopts=-N4 -eventlog
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , containers
+    , par-wordle
+    , parallel
+  default-language: Haskell2010
+
+executable seq-wordle-exe
+  main-is: Seq.hs
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -eventlog -O2 -rtsopts -eventlog
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , containers
+    , par-wordle
+    , parallel
+  default-language: Haskell2010
+
+test-suite par-wordle-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_par_wordle
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -eventlog -O2
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , containers
+    , par-wordle
+    , parallel
+  default-language: Haskell2010
