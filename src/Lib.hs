@@ -9,8 +9,6 @@ where
 import qualified Data.Set as Set
 import qualified Data.Map as Map
 import qualified Data.ByteString.Char8 as B
-import qualified System.Environment as Env
-import qualified System.Exit as Exit
 import Control.Parallel.Strategies
 
 data Knowledge = Knowledge { green :: Set.Set (Int, Char)
@@ -77,7 +75,7 @@ matchGreys xs w
 Takes a guess and returns a Set of valid possible words.
 -}
 possibleWords:: Lib.Knowledge -> Set.Set B.ByteString -> Set.Set B.ByteString
-possibleWords k w = Set.intersection (Set.intersection (matchGreens (Set.toList (green k)) w) (matchYellows (Set.toList (yellow k)) w)) (matchGreys (Set.toList (grey k)) w)
+possibleWords k g = Set.intersection (Set.intersection (matchGreens (Set.toList (green k)) g) (matchYellows (Set.toList (yellow k)) g)) (matchGreys (Set.toList (grey k)) g)
 
 getYellows :: B.ByteString -> B.ByteString -> Set.Set (Int, Char)
 getYellows g a = l `Set.difference` getGreens g a
@@ -97,10 +95,6 @@ addToKnowledge k g a = Knowledge greens yellows greys
    where greens = green k `Set.union` getGreens g a
          yellows = yellow k `Set.union` getYellows g a
          greys = grey k `Set.union` getGreys g a
-
-{-
-g is the guess, w is the set of possible words at this point
--}
 
 count :: Ord a => [a] -> Map.Map a Float
 count = Map.fromListWith (+) . (`zip` repeat 1)
