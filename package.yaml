@@ -43,7 +43,7 @@ library:
 
 executables:
   par-wordle-exe:
-    main:                Main.hs
+    main:                Par.hs
     other-modules:       []
     source-dirs:         app
     ghc-options: 
