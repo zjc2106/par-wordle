@@ -2,7 +2,7 @@
 
 Authors: Sanjay Rajasekharan and Zac Coeur
 
-For Project Report see [ParWordle-report.pdf](ParWordle-Presentation.pdf) and ParWordle-Presentation.pdf
+For Project Info see [ParWordle-report.pdf](ParWordle-report.pdf) and [ParWordle-Presentation.pdf](ParWordle-Presentation.pdf)
 
 #### Compilation:
 - stack build
