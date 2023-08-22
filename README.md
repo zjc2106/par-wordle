@@ -2,6 +2,8 @@
 
 Authors: Sanjay Rajasekharan and Zac Coeur
 
+For Project Report see ParWordle-report.pdf and ParWordle-Presentation.pdf
+
 #### Compilation:
 - stack build
 #### Parallel Usage:
